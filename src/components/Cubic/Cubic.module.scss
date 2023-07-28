@@ -1,0 +1,24 @@
+.cubic {
+  margin: auto;
+  display: block;
+  width: 200px;
+  height: 200px;
+  border: 1px solid #61dafb;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  border-radius: 12px;
+
+  .cubic-img {
+    border-radius: 12px;
+    width: 100%;
+    object-position: center;
+    background-color: no-repeat padding-box border-box 50%/contain scroll url("https://www.istockphoto.com/resources/images/PhotoFTLP/P2-JULY-iStock-1401027241.jpg");
+    object-fit: cover;
+    box-shadow: 2.83px 2.83px 21px -8px black;
+    cursor: pointer;
+    position: static;
+  }
+
+  align-self: start;
+  background-color: #33F88A;
+}

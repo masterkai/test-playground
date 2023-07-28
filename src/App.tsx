@@ -1,26 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import { Link, Route, Routes } from "react-router-dom";
+import { PullToRefreshPage } from "./pages/PullToRefreshPage";
+import TestingReactQuery from "./pages/TestingReactQuery";
+
+function sayHi() {
+	let a: number = 10;
+
+	console.log(a);
+}
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	sayHi();
+	return (
+		<div className="App">
+			<ul>
+				<li>
+					<Link to={"/"}>Pull2Refresh</Link>
+				</li>
+				<li>
+					<Link to={"/testing-react-query"}>
+						ReactQueryPlayground
+					</Link>
+				</li>
+			</ul>
+			<Routes>
+				<Route path={"/"} element={<PullToRefreshPage />} />
+				<Route
+					path={"/testing-react-query"}
+					element={<TestingReactQuery />}
+				/>
+			</Routes>
+		</div>
+	);
 }
 
 export default App;
