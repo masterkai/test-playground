@@ -10,6 +10,7 @@ import AutoCompleteTest from "./pages/AutoCompleteTest";
 import DigitalClock from "./pages/DigitalClock";
 import RandomNumber from "./pages/RandomNumber";
 import HowMuchTimeIsLeft from "./pages/HowMuchTimeIsLeft";
+import CoverLetter from "./pages/CoverLetter";
 
 function sayHi() {
 	let a: number = 10;
@@ -55,6 +56,11 @@ function App() {
 						how-much-time-is-left
 					</Link>
 				</li>
+				<li>
+					<Link to={"/cover-letter"}>
+						cover-letter
+					</Link>
+				</li>
 			</ul>
 			<Routes>
 				<Route path={"/"} element={<PullToRefreshPage />} />
@@ -81,6 +87,7 @@ function App() {
 					element={<AutoCompleteTest />}
 				/>
 				<Route path={"/digital-clock"} element={<DigitalClock />} />
+				<Route path={"/cover-letter"} element={<CoverLetter />} />
 			</Routes>
 		</div>
 	);
