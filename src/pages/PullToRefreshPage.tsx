@@ -7,7 +7,11 @@ export const PullToRefreshPage = () => {
 	return (
 		<div>
 			<Header>
-				<TextStyled>Fat headline!</TextStyled>
+				<TextStyled>
+					<div className="font-bold underline text-amber-800">
+						Fat headline!
+					</div>
+				</TextStyled>
 			</Header>
 			<PullToRefresh />
 		</div>
@@ -20,7 +24,4 @@ const Header = styled.header`
 	height: max-content;
 `;
 
-const TextStyled = styled(ReactFitty)`
-	color: red;
-	text-decoration: underline;
-`;
+const TextStyled = styled(ReactFitty)``;

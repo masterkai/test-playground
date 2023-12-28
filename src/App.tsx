@@ -3,6 +3,13 @@ import "./App.css";
 import { Link, Route, Routes } from "react-router-dom";
 import { PullToRefreshPage } from "./pages/PullToRefreshPage";
 import TestingReactQuery from "./pages/TestingReactQuery";
+import TestingTextInputComponent from "./pages/TestTextInputComponent";
+import { V2Example } from "./pages/ReactXarrows";
+import RefKeyTesting from "./pages/RefKeyTesting";
+import AutoCompleteTest from "./pages/AutoCompleteTest";
+import DigitalClock from "./pages/DigitalClock";
+import RandomNumber from "./pages/RandomNumber";
+import HowMuchTimeIsLeft from "./pages/HowMuchTimeIsLeft";
 
 function sayHi() {
 	let a: number = 10;
@@ -23,6 +30,31 @@ function App() {
 						ReactQueryPlayground
 					</Link>
 				</li>
+				<li>
+					<Link to={"/react-xarrows"}>react-xarrows</Link>
+				</li>
+				<li>
+					<Link to={"/testing-text-input"}>TextInputPlayground</Link>
+				</li>
+				<li>
+					<Link to={"/testing-obj-ref-key"}>testing-obj-ref-key</Link>
+				</li>
+				<li>
+					<Link to={"/testing-auto-complete"}>
+						testing-auto-complete
+					</Link>
+				</li>
+				<li>
+					<Link to={"/digital-clock"}>digital-clock</Link>
+				</li>
+				<li>
+					<Link to={"/random-number"}>random-number</Link>
+				</li>
+				<li>
+					<Link to={"/how-much-time-is-left"}>
+						how-much-time-is-left
+					</Link>
+				</li>
 			</ul>
 			<Routes>
 				<Route path={"/"} element={<PullToRefreshPage />} />
@@ -30,6 +62,25 @@ function App() {
 					path={"/testing-react-query"}
 					element={<TestingReactQuery />}
 				/>
+				<Route
+					path={"/how-much-time-is-left"}
+					element={<HowMuchTimeIsLeft />}
+				/>
+				<Route path={"/random-number"} element={<RandomNumber />} />
+				<Route
+					path={"/testing-text-input"}
+					element={<TestingTextInputComponent />}
+				/>
+				<Route path={"/react-xarrows"} element={<V2Example />} />
+				<Route
+					path={"/testing-obj-ref-key"}
+					element={<RefKeyTesting />}
+				/>
+				<Route
+					path={"/testing-auto-complete"}
+					element={<AutoCompleteTest />}
+				/>
+				<Route path={"/digital-clock"} element={<DigitalClock />} />
 			</Routes>
 		</div>
 	);
