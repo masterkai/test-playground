@@ -12,6 +12,7 @@ import RandomNumber from "./pages/RandomNumber";
 import HowMuchTimeIsLeft from "./pages/HowMuchTimeIsLeft";
 import CoverLetter from "./pages/CoverLetter";
 import ClassComponent from "./components/ClassComponent";
+import InputUndoRedo from "./pages/InputUndoRedo";
 
 function sayHi() {
 	let a: number = 10;
@@ -63,6 +64,9 @@ function App() {
 				<li>
 					<Link to={"/class-component"}>class-component</Link>
 				</li>
+				<li>
+					<Link to={"/input-undo-redo"}>input-undo-redo</Link>
+				</li>
 			</ul>
 			<Routes>
 				<Route path={"/"} element={<PullToRefreshPage />} />
@@ -91,6 +95,7 @@ function App() {
 				<Route path={"/digital-clock"} element={<DigitalClock />} />
 				<Route path={"/cover-letter"} element={<CoverLetter />} />
 				<Route path={"/class-component"} element={<ClassComponent />} />
+				<Route path={"/input-undo-redo"} element={<InputUndoRedo />} />
 			</Routes>
 		</div>
 	);

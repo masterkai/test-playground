@@ -6,6 +6,7 @@ import { useImmer } from "use-immer";
 
 const Index = () => {
 	const [value, setValue] = React.useState(0);
+	const [count, setCount] = React.useState(0);
 	const [number, setNumber] = React.useState(0);
 	const [array, setArray] = React.useState<number[]>([]);
 	const [idx, setIdx] = useImmer<number>(0);
@@ -25,6 +26,10 @@ const Index = () => {
 	const handleReset = () => {
 		const arr = Array.from({ length: value }, (_, idx) => idx);
 		setArray(arr);
+	};
+	const handleButtonClick = () => {
+		setCount(count + 1);
+		setCount(count + 1);
 	};
 	useEffect(() => {
 		const arr = Array.from({ length: value }, (_, idx) => idx);
@@ -60,6 +65,9 @@ const Index = () => {
 				<Button variant="outlined" onClick={handleClick}>
 					<ArrowRightIcon />
 					GENERATE
+				</Button>
+				<Button variant="outlined" onClick={handleButtonClick}>
+					Count: {count.toString()}
 				</Button>
 
 				<Typography variant="h1" gutterBottom>
