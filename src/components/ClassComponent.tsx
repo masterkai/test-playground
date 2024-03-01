@@ -1,4 +1,4 @@
-import React, { ChangeEvent, MouseEvent, RefObject } from "react";
+import React, { ChangeEvent, RefObject } from "react";
 
 interface ClassComponentState {
 	employees: string[];
@@ -18,16 +18,19 @@ class ClassComponent extends React.Component<{}, ClassComponentState> {
 	}
 
 	getEmployeeName(name: string): string {
-		return this.state.employees.includes(name)
-			? `Employee ${name} exists`
-			: `Employee ${name} does not exist`;
+		// return this.state.employees.includes(name)
+		// 	? `Employee ${name} exists`
+		// 	: `Employee ${name} does not exist`;
+		name = name.toLowerCase();
+		if(this.state.employees.some(x=>x.toLowerCase() === name)) return `Employee ${name} exists`;
+		return `Employee ${name} does not exist`;
 	}
 
 	handleInputChange = (e: ChangeEvent<HTMLInputElement>): void => {
 		this.setState({ message: "" });
 	};
 
-	handleButtonClick = (e: MouseEvent<HTMLButtonElement>): void => {
+	handleButtonClick = (): void => {
 		const inputValue = this.inputRef.current?.value || "";
 		this.setState({
 			message: this.getEmployeeName(inputValue),
@@ -41,9 +44,9 @@ class ClassComponent extends React.Component<{}, ClassComponentState> {
 					type="text"
 					ref={this.inputRef}
 					onChange={this.handleInputChange}
-					onKeyDown={(e) => {
+					onKeyDown={(e:React.KeyboardEvent<HTMLInputElement>) => {
 						if (e.key === "Enter") {
-							this.handleButtonClick(e as any);
+							this.handleButtonClick();
 						}
 					}}
 				/>
